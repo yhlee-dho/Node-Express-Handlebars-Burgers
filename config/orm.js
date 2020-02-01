@@ -14,7 +14,7 @@ const orm = {
             cb(result);
         });
     },
-    // insertOne
+    // insertOne - objColVals = {burger_name: fattyfatfats, devoured: true}
     insertOne: function(table, objColVals, cb) {
         // "INSERT INTO ?? SET ?"
         const queryString = "INSERT INTO ?? SET ?";
@@ -25,7 +25,7 @@ const orm = {
             cb(result);
         });
     },
-    // updateOne - obj = {burger_name: classic, devoured: true}
+    // updateOne 
     updateOne: function(table, objColVals, condition, cb) {
         // "UPDATE ?? SET ? WHERE ?"
         const queryString = "UPDATE ?? SET ? WHERE ?";
@@ -40,3 +40,19 @@ const orm = {
 
 // Export orm
 module.exports = orm;
+
+
+// test code to catch error
+// selectAll
+// const orm = {
+//     selectAll: function(table, cb) {
+//         // "SELECT * FROM ??"
+//         const queryString = "SELECT * FROM ??";
+//         connection.query(queryString, [table], function(err, result) {
+//             if (err) { throw err }
+//                 cb(result)
+//         }).catch(error)
+//         { if (error) throw error };
+// }
+
+// }

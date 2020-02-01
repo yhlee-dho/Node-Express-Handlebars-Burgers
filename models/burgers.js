@@ -10,7 +10,7 @@ const burger = {
             cb(res);
         });
     },
-    // insertOne - objColVals -> array
+    // insertOne - objColVals = {burger_name: fattyburger, devoured: true}
     insertOne: function(objColVals, cb) {
         // orm.insertOne({})
         orm.insertOne("burgers", objColVals, function(res) {
