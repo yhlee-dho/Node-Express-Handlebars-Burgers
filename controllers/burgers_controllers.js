@@ -1,5 +1,5 @@
 // requirements
-const burger = require("../models/burgers.js");
+const burger = require("../models/burger.js");
 const express = require("express");
 const router = express.Router();
 
@@ -39,7 +39,8 @@ router.put("/api/burgers/:id", function(req, res) {
       devoured: req.body.devoured
     },
             // check if any rows were changed. if not id is null, 404
-    condition, function(result) {
+    condition, 
+    function(result) {
       if (result.changedRows == 0) {
         return res.status(404).end();
       } else {
