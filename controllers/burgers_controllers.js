@@ -1,5 +1,5 @@
 // requirements
-const burger = require("../models/burger.js");
+const burger = require("../models/burgers.js");
 const express = require("express");
 const router = express.Router();
 
@@ -12,7 +12,7 @@ router.get("/", function(req, res) {
     const hamburgerObj = {
       burgers: data
     };
-            // render
+            // render in index
     // console.log(hamburgerObj);
     res.render("index", hamburgerObj);
   });
