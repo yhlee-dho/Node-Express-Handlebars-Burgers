@@ -9,7 +9,7 @@ const app = express();
 
 
 // hook up express with "public"
-app.use(express.static("public"));
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -23,6 +23,7 @@ app.set("view engine", "handlebars");
 // Import routes and give express server access
 const routes = require("./controllers/burgers_controllers.js");
 app.use(routes);
+app.use(express.static(__dirname + '/public'));
 
 // Start server
 app.listen(PORT, function() {
